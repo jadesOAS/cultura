@@ -492,9 +492,16 @@ label {
     }
 /* Diseño responsivo */
 
-@media (width < 600px)
+@media (width < 750px)
 /* Si quieres asegurarte de que el sistema no influya */{
-     .header h3 {
+    .indice ul {
+      display: grid;
+      height: 100vh;
+    }
+    .indice li:hover {
+      z-index: 50;
+    }
+    .header h3 {
       font-size: 1.2em;
     }
     .header p {
@@ -539,3 +546,4 @@ label {
        margin-right: 0%;
     }
   }
+
