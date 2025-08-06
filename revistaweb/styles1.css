@@ -496,9 +496,12 @@ label {
 /* Si quieres asegurarte de que el sistema no influya */{
     .indice ul {
       display: grid;
+      grid-template-columns: 1fr;
+      width: 80vw; 
       height: 100vh;
     }
     .indice li:hover {
+      box-shadow: inset 2px 2px 8px #000;
       z-index: 50;
     }
     .header h3 {
@@ -546,4 +549,5 @@ label {
        margin-right: 0%;
     }
   }
+
 
