@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../JUE.MAT/juegos.css">
+    <link rel="stylesheet" href="../JUE.MAT/css/par-impar.css">
+    <link rel="stylesheet" href="../JUE.MAT/css/núm-reales.css">
+    <link rel="stylesheet" href="../JUE.MAT/css/silabas.css">
+    <link rel="stylesheet" href="../.MAT/css/silabas.css">
+    <link rel="stylesheet" href="../JUE.MAT/css/silabas.css">
+</head>
+<header>
+        <div class="volver"><a href="../index.html"> VOLVER</a></div>
+         <h1> JUEGOS DE MATEMATICAS</h1></header>
+<body>
+
+   <section class="par-impar"> 
+
+    </div>
+        
+          <div class="p.impar">
+              <h2> Pares o Impares</h2>
+        <div class="grid">
+    <!-- Tarjeta Pares -->
+    <div class="card" id="card-pares">
+      <div class="card-inner">
+        <!-- Frente: Definición ciclo inicial -->
+        <div class="card-face front">
+          <h2>✅ Números Pares</h2>
+          <p>
+            Los números <strong>pares</strong> son los que tienen <strong>compañero</strong>.  
+            Si los repartimos en grupos de 2, <strong>nadie queda solo</strong>.
+          </p>
+          <button class="btn-flip" onclick="flipCard('card-pares')">Ver Definición Superior</button>
+        </div>
+        <!-- Reverso: Definición ciclo superior -->
+        <div class="card-face back">
+          <h2>✅ Números Pares</h2>
+          <p>
+            Son aquellos números enteros divisibles por 2.  
+            Es decir, cuando se dividen entre 2, el resto es 0.  
+            <br><strong>Ejemplos:</strong> 2, 4, 6, 8, 10.
+          </p>
+          <p>Un número es impar si puede reprecentase como:</p>
+            <p> n=2.k</p>
+            <p>Donde k es un número entero.</p>
+          <button class="btn-flip" onclick="flipCard('card-pares')">Ver Definición Inicial</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Impares -->
+    <div class="card" id="card-impares">
+      <div class="card-inner">
+        <!-- Frente: Definición ciclo inicial -->
+        <div class="card-face front">
+          <h2>🔴 Números Impares</h2>
+          <p>
+            Los números <strong>impares</strong> son los que <strong>no tienen compañero</strong>.  
+            Si los repartimos en grupos de 2, <strong>uno queda solito</strong>.
+          </p>
+          <button class="btn-flip" onclick="flipCard('card-impares')">Ver Definición Superior</button>
+        </div>
+        <!-- Reverso: Definición ciclo superior -->
+        <div class="card-face back">
+          <h2>🔴 Números Impares</h2>
+          <p>
+            Son aquellos números enteros que <strong>no son divisibles por 2</strong>.  
+            Cuando se dividen entre 2, el resto es 1.  
+            <br><strong>Ejemplos:</strong> 1, 3, 5, 7, 9.</p>
+            <p>Un número es impar si puede reprecentase como:</p>
+            <p> n=2.k+1</p>
+            <p>Donde k es un número entero.</p>
+          
+          <button class="btn-flip" onclick="flipCard('card-impares')">Ver Definición Inicial</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function flipCard(cardId) {
+      document.getElementById(cardId).classList.toggle('flipped');
+    }
+  </script>
+  <div id="game-container">
+    <div id="number">Presiona "Iniciar"</div>
+    <button class="btn" onclick="checkAnswer('par')" disabled id="parBtn">Par</button>
+    <button class="btn" onclick="checkAnswer('impar')" disabled id="imparBtn">Impar</button>
+    <div>
+      <button class="btn" onclick="startGame()">Iniciar</button>
+    </div>
+    <div id="result"></div>
+    <div id="score">Puntos: 0</div>
+  </div>
+         <script src="../JUE.MAT/js/pa-impar.js"></script>
+   </section>
+   
+   <section class="reales">
+    <!--concepto -->
+    <div class="card-container">
+        <div class="card-r" id="real-card">
+            <h2>Números Reales </h2>
+            <p>Son todos los números que pueden representarse en una recta numérica, incluyendo los racionales y los irracionales.</p>
+            <p>Ejemplos:  5, -3/4, \pi, \sqrt{2} </p>
+            <div class="sub-cards-container">
+              <div id="rational-card">
+              <h3> Números Racionales</h3>
+              <p> description: 'Son todos los números que pueden escribirse como una fracción p/q, donde p y q son enteros y q \neq 0.',
+        examples: 'Ejemplos: 5/2, -0.25, 7, 0.333...'</p>
+              </div >
+              <div id="irrational-card">
+                <h3> Números Irracionales</h3>
+              <p> description: Son los números que no pueden expresarse como una fracción. Su representación decimal es infinita y no periódica.',
+        examples: Ejemplos: \pi, \sqrt{2}, e, \pi</p>
+              </div>
+                </div>
+        </div>
+    </div>
+    <!--juego-->
+       
+       
+    <div class="game-container">
+       <h2>Clasifica los números</h2>
+    <p>Arrastra cada número a la categoría correcta.</p>
+        <div id="numbers-container">
+            </div>
+
+        <div class="drop-zones-container">
+            <div class="drop-zone" id="rational-zone" data-type="rational">
+                <h2>Números Racionales</h2>
+            </div>
+            <div class="drop-zone" id="irrational-zone" data-type="irrational">
+                <h2>Números Irracionales</h2>
+            </div>
+        </div>
+    </div>
+    
+    <button id="check-button">Verificar Respuesta</button>
+    <button id="reset-button">Reiniciar</button>
+    
+    <div id="message"></div>
+
+    <script src="../JUE.MAT/js/num-reales.js"></script>
+   </section>
+
+</body>
+</html>

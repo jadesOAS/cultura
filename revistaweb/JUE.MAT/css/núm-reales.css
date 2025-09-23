@@ -1,0 +1,132 @@
+/*juego de reales*/
+.reales {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #6dd5fa, #2980b9);
+    padding: 20px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+.game-container h2 {
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+#numbers-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.number-card {
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: grab;
+    touch-action: none;
+}
+
+.drop-zones-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.drop-zone {
+    width: 45%;
+    min-height: 250px;
+    border: 3px dashed #666;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+#rational-zone {
+    background-color: #d1e7dd;
+    border-color: #198754;
+}
+
+#irrational-zone {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/*definicion de reales*/
+.card-container {
+    perspective: 1000px;
+}
+
+.card-r {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 600px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    margin-top: 50px;
+}
+
+#real-card {
+    border: 3px solid #007bff;
+}
+
+.sub-cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.sub-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 45%;
+    box-shadow: 5px 5px 15px #d1d1d1;
+}
+
+#rational-card {
+    border: 2px solid #28a745;
+    border-radius: 10px;
+}
+
+#irrational-card {
+    border: 2px solid #dc3545;
+    border-radius: 10px;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 1.1em;
+}

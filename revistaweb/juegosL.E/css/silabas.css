@@ -1,0 +1,136 @@
+#silabas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.game-silabas {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    margin: 10px auto 30px;
+}
+
+.syllable-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.syllable-part {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+}
+
+.syllable-part.selected {
+    background-color: #4CAF50;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.consonant-options, .vowel-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.letter-button {
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #2196F3;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.letter-button.vowel {
+    background-color: #FFC107;
+}
+
+.letter-button:hover {
+    transform: scale(1.1);
+}
+
+.actions-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#comenzarsilabas, #speakButton, #resetButton {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #2196F3;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+#speakButton {
+    background-color: #8BC34A;
+}
+
+#resetButton {
+    background-color: #F44336;
+}
+
+#comenzarsilabas:hover {
+    background-color: #0b7dda;
+}
+
+#speakButton:hover {
+    background-color: #729e3a;
+}
+
+#resetButton:hover {
+    background-color: #c5372c;
+}
+
+.hidden {
+    display: none;
+}
+@media (max-width: 600px) {
+     .actions-container{
+        flex-direction: column;
+    }
+}

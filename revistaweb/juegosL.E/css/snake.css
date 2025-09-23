@@ -1,0 +1,67 @@
+#snake {
+  display:flex;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  height: 100vh;
+  margin: 0;
+}
+.uno {
+  width: auto;
+  height: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+.dos {
+    width: auto;
+  height: auto;
+    margin-left: 5%;
+}
+canvas {
+  background-color: #222;
+  border: 3px solid #333;
+  margin-top: 10px;
+}
+
+.iniciarsnaks{
+  background: #8ce7ca;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 15% ;
+  border: 2px solid #767171;
+  border-radius: 5px ;
+  cursor: pointer;
+}
+.controls {
+    display: none; /* Oculta los controles por defecto */
+    justify-content: center;
+    align-items: auto;
+    flex-wrap: wrap;
+    width: 20px;
+    margin: 10px auto;
+}
+
+.controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#upBtn, #downBtn {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    #snake {
+      flex-direction: column;
+    }
+    .controls {
+        display: flex; /* Muestra los controles en pantallas pequeñas */
+    }
+}
+

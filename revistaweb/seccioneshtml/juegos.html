@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juegos</title>
+    <link rel="stylesheet" href="../juegosL.E/juegos.css">
+    <link rel="stylesheet" href="../juegosL.E/css/snake.css">
+    <link rel="stylesheet" href="../juegosL.E/css/vc.css">
+    <link rel="stylesheet" href="../juegosL.E/css/identificar.css">
+    <link rel="stylesheet" href="../juegosL.E/css/silabas.css">
+</head>
+<body>
+    <header>
+         <div class="volver"><a href="../index.html"> VOLVER</a></div>
+         <h1> JUEGOS DE LECTOESCRITURA</h1>
+    </header>
+   
+    <section id="snake">
+        <div  class="uno">
+            <h2>Snake Game - Letras ABC</h2>
+            <button class="iniciarsnaks" id="startBtn">Iniciar Juego</button>
+        </div>
+        <div class="dos">
+            <canvas id="gameCanvas" width="290" height="290"></canvas>
+            <div class="controls">
+                <div> <button id="upBtn">⬆️</button></div>
+                <div> <button id="leftBtn">⬅️</button></div>
+                <div> <button id="rightBtn">➡️</button></div>
+                <div><button id="downBtn">⬇️</button></div>
+            </div>
+            <p id="status"></p>
+        </div>
+    
+     <script src="../juegosL.E/js/snake.js"></script>
+    </section>
+    <section id="identificar">
+        <div class="game-container">
+        <h2>¡Encuentra las Letras!</h2>
+        <p>Haz clic en las letras para ganar. ¡Ten cuidado, no selecciones números ni símbolos!</p>
+        
+        <div class="grid-container" id="grid-identificar">
+            </div>
+
+        <button id="startButton">¡Comenzar!</button>
+        <div class="feedback" id="feedback"></div>
+    </div>
+    <script src="../juegosL.E/js/identificar.js"></script>
+    </section>
+    <section id="vc">
+        <div class="game-container">
+        <h2>¡Encuentra las Vocales!</h2>
+        <p>Haz clic en las vocales para ganar. ¡Tienes 6 rondas!</p>
+        
+        <div class="score-container">
+            <p>Rondas: <span id="roundCounter">0</span> / 6</p>
+            <p>Puntos: <span id="scoreCounter">0</span></p>
+        </div>
+
+        <div class="grid-container" id="grid-container">
+            </div>
+
+        <button id="comenzarvc">¡Comenzar!</button>
+        <div class="feedback" id="feedback"></div>
+    </div>
+    <script src="../juegosL.E/js/vc.js"></script>
+    </section>
+    <section id="silabas">
+        <div class="game-silabas">
+        <h2>¡Crea tus Sílabas!</h2>
+        <p>Elige una consonante y una vocal para formar una sílaba. ¡Escucha cómo suena!</p>
+        
+        <div class="syllable-display">
+            <div class="syllable-part" id="consonantSlot">?</div>
+            <div class="syllable-part" id="vowelSlot">?</div>
+        </div>
+
+        <div class="options-container" id="optionsContainer">
+            <div class="consonant-options" id="consonantOptions">
+                </div>
+            <div class="vowel-options" id="vowelOptions">
+                </div>
+        </div>
+        
+        <div class="actions-container">
+            <button id="speakButton">¡Habla!</button>
+            <button id="resetButton">Cambiar Letras</button>
+        </div>
+        
+        <button id="comenzarsilabas">¡Comenzar!</button>
+    </div>
+    
+    <script src="../juegosL.E/js/silabas.js"></script>
+    </section>
+</body>
+</html>

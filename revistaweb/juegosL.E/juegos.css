@@ -1,0 +1,42 @@
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: aquamarine;
+    border-bottom: 3px solid #04566e;
+}
+header h1{
+    width: 40%;
+    color: rgb(223, 212, 199);
+    margin-left: 30%;
+    background-color: #52a84c;
+    font-size: 1.8em;
+    margin-top: 8px;
+    text-align: center;
+    border-radius: 10px;
+    text-shadow: 1px 3px 2px #484343;
+}
+.volver {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+section{
+    display: flex;
+    background: linear-gradient(to right, #22d42e, #077a0f);
+    border-bottom: 3px solid #2980b9;
+}
+@media (width< 600px) {
+    header h1{
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.2em;
+   }
+   .volver {
+    font-size: 0.8em;
+   }
+   h2 {
+    font-size: 1em;
+   }
+   p {
+    font-size: 0.8em;
+   }
+}
