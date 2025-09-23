@@ -112,4 +112,33 @@ a {
    p {
     font-size: 0.8em;
    }
+    .articule {
+      width: 90%;
+          margin-left: 0;
+          margin-right: 8%;
+    }
+
+    .articule h2 {
+        font-size: 1.5em;
+        margin-top: 10%;
+
+    }
+    .matematica h2 {
+        font-size: 1.5em;
+    }
+
+    .articule p {
+        font-size: 1.1em;
+        width: 95%;
+        text-align: center;
+    }
+    .articule li {
+    font-size: 1.1em;
+        width: 95%;
+    }
+    
+    .articule input {
+        padding: 6px 30px;
+    }
+
 }
