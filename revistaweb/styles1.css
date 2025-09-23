@@ -17,7 +17,7 @@ body {
   height: 100vh;
    box-sizing: border-box;
    background-image:  url(plaza-moreno.png ) ;
-   background-size: cover;
+   background-size: 100% 100%;
    display: flex;
     z-index: 1;
 }
@@ -75,6 +75,34 @@ body {
     font-size: 1.8em;
      color: #3f0457;
      background-color: antiquewhite;
+}
+/*rediracción a secciones*/
+.his, .bio, .sal, .ad-ma, .j-l, .j-m {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0.1em;
+  border-radius: 10px;
+  color:#031c45;
+  font-size: 2em;
+  
+}
+.his {
+ background: linear-gradient(to right, #5faad8, #847702);
+} 
+.bio {
+  background: linear-gradient(to right, #e4b942, #0480b5);
+} 
+.sal{
+  background: linear-gradient(to right, #8beaf1, #9bf231);
+}
+.ad-ma {
+  background: linear-gradient(to right, #c403c4, #049667);
+}
+.j-l {
+  background: linear-gradient(to right, #22d42e, #077a0f);
+}
+.j-m{
+  background: linear-gradient(to right, #6dd5fa, #2980b9);
 }
 /*secciones*/
 .historia {
@@ -137,7 +165,7 @@ body {
     margin-left: 20%;
     margin-right: 5%;
     padding: 15px;
-    border-bottom: 2px solid #9e4a4a;
+    border-top: 3px solid #e90e9c;
 }
 
 
@@ -200,9 +228,9 @@ summary {
 }
 .indice ul{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-     color: #237af4;
-     overflow: auto;  
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+     color: #237af4;  
 }
 .indice li {
     display: flex;
@@ -228,7 +256,7 @@ summary {
     color: #f9f9f9;
     width: 85%;
   margin: 10% 0 10%;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .indice .historia { 
 
@@ -290,6 +318,7 @@ summary {
     padding: 0.5em;
     border-radius: 10px;
 }
+
 .juegos h2 {
         color: #441401f5;
     font-size: 1.8em;
@@ -312,7 +341,6 @@ border-radius: 10px;
 border-bottom: 3px solid yellow;
 border-right: 3px solid yellow;
 }
-
 input {
     width: 100%;
     margin-top: 8px;
@@ -333,8 +361,6 @@ label {
 .opcion {
     background-color:  #f0aee6;
 }
-    /*   <style>*/
-
     h3 {
       color: #4b4b4b;
     }
@@ -369,7 +395,6 @@ label {
       font-size: 24px;
       font-weight: bold;
     }
-  /*</style>*/
   /*definición de par e impar*/
     .par-impar {
       font-family: Arial, sans-serif;
@@ -410,15 +435,6 @@ label {
       font-size: 1.8em;
       font-weight: bold;
     }
- /*.par-impar {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #80deea);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }*/
 
      .grid {
       display: grid;
@@ -492,23 +508,26 @@ label {
     }
 /* Diseño responsivo */
 
-@media (width < 750px)
-/* Si quieres asegurarte de que el sistema no influya */{
+@media (width < 750px) {
+    body {
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+    }
     .indice ul {
       display: grid;
-      grid-template-columns: 1fr;
-      width: 80vw; 
+      grid-template-columns: 1fr;/*subir a gridhut*/
+      width: 80vw; /*subir a gridhut*/
       height: 100vh;
     }
     .indice li:hover {
-      box-shadow: inset 2px 2px 8px #000;
+      box-shadow: inset 2px 2px 8px #000;/*subir agridhut*/
       z-index: 50;
     }
     .header h3 {
-      font-size: 1.2em;
+      font-size: 1em;
     }
     .header p {
-        font-size: 1.2em;
+        font-size: 0.7em;
     }
     .logo {
       width: 80%;
@@ -540,7 +559,8 @@ label {
     .articule li {
     font-size: 1.1em;
         width: 95%;
-}
+    }
+    
     .articule input {
         padding: 6px 30px;
     }
@@ -549,5 +569,6 @@ label {
        margin-right: 0%;
     }
   }
+
 
 
