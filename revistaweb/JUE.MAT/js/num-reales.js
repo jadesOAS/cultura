@@ -33,10 +33,112 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'number-card';
             card.textContent = num.value;
             card.dataset.type = num.type;
+            card.addEventListener(´touchstart', handleToouchStart);
             card.setAttribute('draggable', true);
             numbersContainer.appendChild(card);
         });
     };
+    // Variable global para almacenar el elemento que estamos arrastrando
+let draggingCard = null;
+
+// --- Adaptación para Pantallas Táctiles (Touch Events) ---
+
+// 1. Inicia el arrastre al tocar la tarjeta
+const handleTouchStart = (e) => {
+    // Solo procesamos el primer toque
+    if (e.touches.length !== 1) return; 
+
+    // Guardar la tarjeta que se está tocando
+    draggingCard = e.currentTarget;
+    
+    // Almacenar las coordenadas iniciales del toque
+    const touch = e.touches[0];
+    const offsetX = touch.clientX - draggingCard.getBoundingClientRect().left;
+    const offsetY = touch.clientY - draggingCard.getBoundingClientRect().top;
+    
+    // Guardar el offset en el elemento para un arrastre suave
+    draggingCard.dataset.offsetX = offsetX;
+    draggingCard.dataset.offsetY = offsetY;
+
+    // Configurar la tarjeta para que se pueda mover
+    draggingCard.style.position = 'absolute';
+    draggingCard.style.zIndex = '1000';
+    draggingCard.style.opacity = '0.8';
+};
+
+// 2. Mueve la tarjeta mientras se arrastra el dedo
+const handleTouchMove = (e) => {
+    if (!draggingCard) return;
+    e.preventDefault(); // IMPORTANTE: Previene el desplazamiento de la página mientras arrastramos
+
+    const touch = e.touches[0];
+    const offsetX = parseFloat(draggingCard.dataset.offsetX);
+    const offsetY = parseFloat(draggingCard.dataset.offsetY);
+
+    // Mover la tarjeta para seguir el dedo, compensando el offset
+    draggingCard.style.left = `${touch.clientX - offsetX}px`;
+    draggingCard.style.top = `${touch.clientY - offsetY}px`;
+};
+
+// 3. Finaliza el arrastre y suelta la tarjeta
+const handleTouchEnd = (e) => {
+    if (!draggingCard) return;
+    
+    // Obtener la posición del último toque
+    const touch = e.changedTouches[0];
+    const x = touch.clientX;
+    const y = touch.clientY;
+
+    // Identificar el elemento debajo del dedo (la zona de soltar)
+    // Esconder la tarjeta temporalmente para que elementFromPoint detecte lo que hay debajo
+    draggingCard.style.visibility = 'hidden';
+    const targetElement = document.elementFromPoint(x, y);
+    draggingCard.style.visibility = 'visible';
+    
+    // Intentar encontrar la drop-zone correcta
+    const dropZone = targetElement.closest('.drop-zone');
+
+    if (dropZone) {
+        // SOLTADO EXITOSO: Mover la tarjeta a la zona
+        
+        // Restaurar estilos (para que se integre al flujo normal de la drop-zone)
+        draggingCard.style.position = 'static';
+        draggingCard.style.zIndex = 'auto';
+        draggingCard.style.opacity = '1';
+        draggingCard.style.left = '';
+        draggingCard.style.top = '';
+        
+        dropZone.appendChild(draggingCard);
+    } else {
+        // SOLTADO FALLIDO: La tarjeta vuelve al contenedor original (o se queda donde se soltó, dependiendo de tu diseño)
+        
+        // En este ejemplo, la restauramos a un estado de reposo relativo:
+        draggingCard.style.position = 'static';
+        draggingCard.style.zIndex = 'auto';
+        draggingCard.style.opacity = '1';
+        draggingCard.style.left = '';
+        draggingCard.style.top = '';
+    }
+
+    draggingCard = null; // Reiniciar la variable de arrastre
+};
+
+// --- Integración ---
+/* DEBES ASEGURARTE de aplicar estos listeners a tus tarjetas y al documento:
+    1. Las tarjetas '.number-card' necesitan 'touchstart'
+    2. El 'document' necesita 'touchmove' y 'touchend' para el arrastre global.
+*/
+
+document.addEventListener('touchmove', handleTouchMove);
+document.addEventListener('touchend', handleTouchEnd);
+
+// Ejemplo de cómo aplicar el listener (deberías hacer esto en tu función que crea las tarjetas)
+/* const card = document.createElement('div');
+    card.className = 'number-card';
+    // ...
+    card.addEventListener('touchstart', handleTouchStart);
+    // ...
+*/
 
     // Funciones para arrastrar y soltar
     const handleDragStart = (e) => {
@@ -97,4 +199,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Iniciar el juego
     createNumberCards();
+
 });
