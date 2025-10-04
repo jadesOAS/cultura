@@ -61,8 +61,8 @@ canvas {
 }
 
 .controls button {
-    width: 30px;
-    height: 30px;
+    width: 500px;
+    height: 500px;
     font-size: 20px;
     margin: 0;
     border-radius: 10px;
@@ -83,5 +83,6 @@ canvas {
         display: flex; /* Muestra los controles en pantallas pequeñas */
     }
 }
+
 
 
