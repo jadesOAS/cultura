@@ -36,8 +36,8 @@ canvas {
     display: none; /* Oculta los controles por defecto */
     /*justify-content: center;
     align-items: auto;*/
-    grid-template-columns: repeat(3, 1f);
-    grid-template-rows: repeat(3,1f);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
 
     /*flex-wrap: wrap;*/
     width: 30px;
@@ -80,9 +80,10 @@ canvas {
       flex-direction: column;
     }
     .controls {
-        display: flex; /* Muestra los controles en pantallas pequeñas */
+        display: grid; /* Muestra los controles en pantallas pequeñas */
     }
 }
+
 
 
 
