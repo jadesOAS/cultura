@@ -34,11 +34,30 @@ canvas {
 }
 .controls {
     display: none; /* Oculta los controles por defecto */
-    justify-content: center;
-    align-items: auto;
-    flex-wrap: wrap;
-    width: 20px;
+    /*justify-content: center;
+    align-items: auto;*/
+    grid-template-columns: repeat(3, 1f);
+    grid-template-rows: repeat(3,1f);
+
+    /*flex-wrap: wrap;*/
+    width: 30px;
     margin: 10px auto;
+}
+#upBtn {
+  grid-column: 2/3;
+  grid-row: 1/2;
+} 
+#leftBtn {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+#rightBtn {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+#downBtn {
+  grid-column: 2/3;
+  grid-row: 3/4;
 }
 
 .controls button {
@@ -64,4 +83,5 @@ canvas {
         display: flex; /* Muestra los controles en pantallas pequeñas */
     }
 }
+
 
